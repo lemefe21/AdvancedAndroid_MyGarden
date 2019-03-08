@@ -26,6 +26,7 @@ import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -90,5 +91,13 @@ public class MainActivity
     public void onAddFabClick(View view) {
         Intent intent = new Intent(this, AddPlantActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        Log.i("Plant_MainActivity", "PlantWateringService run!");
+
     }
 }
