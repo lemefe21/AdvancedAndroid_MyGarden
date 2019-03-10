@@ -59,7 +59,7 @@ public class PlantDetailActivity extends AppCompatActivity
 
     public void onWaterButtonClick(View view) {
         //check if already dead then can't water
-        Uri SINGLE_PLANT_URI = ContentUris.withAppendedId(
+        /*Uri SINGLE_PLANT_URI = ContentUris.withAppendedId(
                 BASE_CONTENT_URI.buildUpon().appendPath(PATH_PLANTS).build(), mPlantId);
         Cursor cursor = getContentResolver().query(SINGLE_PLANT_URI, null, null, null, null);
         if (cursor == null || cursor.getCount() < 1) return; //can't find this plant!
@@ -74,7 +74,10 @@ public class PlantDetailActivity extends AppCompatActivity
         contentValues.put(PlantContract.PlantEntry.COLUMN_LAST_WATERED_TIME, timeNow);
         getContentResolver().update(SINGLE_PLANT_URI, contentValues, null, null);
         cursor.close();
-        PlantWateringService.startActionUpdatePlantWidgets(this);
+        PlantWateringService.startActionUpdatePlantWidgets(this);*/
+
+        PlantWateringService.startActionWaterPlants(this, mPlantId);
+
     }
 
     @Override
