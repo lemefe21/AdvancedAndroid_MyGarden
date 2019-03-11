@@ -65,8 +65,17 @@ public class PlantWidgetProvider extends AppWidgetProvider {
         wateringIntent.putExtra(PlantWateringService.EXTRA_PLANT_ID, plantId);
         PendingIntent wateringPendingIntent = PendingIntent.getService(context, 0, wateringIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         views.setOnClickPendingIntent(R.id.widget_water_button, wateringPendingIntent);
+
         // Instruct the widget manager to update the widget
         appWidgetManager.updateAppWidget(appWidgetId, views);
+    }
+
+    private void getGardenGridRemoteView() {
+
+    }
+
+    private void getSinglePlantRemoteView() {
+
     }
 
     @Override
