@@ -13,6 +13,9 @@ import com.example.android.mygarden.provider.PlantContract;
 import com.example.android.mygarden.ui.PlantDetailActivity;
 import com.example.android.mygarden.utils.PlantUtils;
 
+/**
+ * RemoteViewsService
+ */
 public class GridWidgetService extends RemoteViewsService {
     @Override
     public RemoteViewsFactory onGetViewFactory(Intent intent) {
@@ -20,6 +23,10 @@ public class GridWidgetService extends RemoteViewsService {
     }
 }
 
+
+/**
+ * RemoteViewsFactory
+ */
 class GridViewFactory implements RemoteViewsService.RemoteViewsFactory {
 
     private Context mContext;
@@ -127,7 +134,10 @@ class GridViewFactory implements RemoteViewsService.RemoteViewsFactory {
 
     @Override
     public int getViewTypeCount() {
-        return 0;
+
+        // Treat all items in the GridView the same
+
+        return 1;
     }
 
     @Override
